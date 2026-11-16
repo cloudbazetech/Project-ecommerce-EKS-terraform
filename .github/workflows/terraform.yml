@@ -15,37 +15,37 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  AWS_REGION: us-west-1
-  TF_VERSION: 1.16.5
+  AWS_REGION: us-east-2
+  TF_VERSION: 4.4.1
   TF_IN_AUTOMATION: "true"
   TF_INPUT: "false"
 
 jobs:
-  # ---------------------------------------------------------------------------
-#   init:
-#     name: terraform init & validate
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v7
 
-#       - uses: hashicorp/setup-terraform@v4
-#         with:
-#           terraform_version: ${{ env.TF_VERSION }}
-#           terraform_wrapper: false
+  init:
+    name: terraform init & validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
 
-#       - uses: aws-actions/configure-aws-credentials@v6
-#         with:
-#           role-to-assume: ${{ secrets.AWS_OIDC_ARN }}
-#           aws-region: ${{ env.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+          terraform_wrapper: false
 
-#       - name: terraform init
-#         run: terraform init
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
 
-#       - name: terraform fmt
-#         run: terraform fmt -check -recursive
+      - name: terraform init
+        run: terraform init
 
-#       - name: terraform validate
-#         run: terraform validate
+      - name: terraform fmt
+        run: terraform fmt -check -recursive
+
+      - name: terraform validate
+        run: terraform validate
 
 # # #   # ---------------------------------------------------------------------------
 #   tfsec:

@@ -2,20 +2,20 @@
 variable "aws_region" {
   description = "AWS region to deploy into"
   type        = string
-  default     = "us-west-1"
+  default     = "us-east-2"
 }
 
 variable "cluster_name" {
   description = "Name of the EKS cluster; also used as a prefix for related resources"
   type        = string
-  default     = "smartcloud-eks"
+  default     = "cloudbazetech-eks"
 }
 
 # ---- Networking ----
 variable "vpc_name" {
   description = "Name tag of the VPC"
   type        = string
-  default     = "smartcloud-vpc"
+  default     = "cloudbazetech-vpc"
 }
 
 variable "vpc_cidr" {
@@ -111,7 +111,7 @@ variable "node_max_size" {
 variable "key_pair_name" {
   description = "Name of the EC2 key pair (private key is written to <name>.pem)"
   type        = string
-  default     = "smartcloud-eks-key"
+  default     = "cloudbazetech-eks-key"
 }
 
 # ---- Helm chart versions ----
@@ -161,7 +161,7 @@ variable "letsencrypt_server" {
 variable "letsencrypt_email" {
   description = "Optional contact email for the Let's Encrypt account"
   type        = string
-  default     = "chukwunonsosmartagbawo@gmail.com"
+  default     = "prinzeadeyemi@gmail.com"
 }
 
 # ---- Argo CD ----
@@ -182,7 +182,7 @@ variable "efs_transition_to_ia" {
 variable "kubeconfig_bucket" {
   description = "S3 bucket where the admin kubeconfig is uploaded"
   type        = string
-  default     = "terrformstate-060647991200"
+  default     = "cloudbazetech-173291123170"
 }
 
 variable "kubeconfig_s3_key" {
