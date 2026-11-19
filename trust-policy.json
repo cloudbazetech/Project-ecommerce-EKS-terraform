@@ -12,7 +12,7 @@
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:prinzeadeyemi-netizen/Project-ecommerce-EKS-terraform:*"
+          "token.actions.githubusercontent.com:sub": "repo:cloudbazetech@326473447/Project-ecommerce-EKS-terraform@1455353697:*"
         }
       }
     }
