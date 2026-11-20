@@ -60,6 +60,7 @@ jobs:
         with:
           soft_fail: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          version: v1.28.14
 
   sonar-scan:
     name: security scan (sonar-scan) Phase(2)
